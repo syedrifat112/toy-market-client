@@ -7,6 +7,7 @@ import Error from "../Pages/Home/Error/Error";
 import CateDetails from "../Pages/Home/Category/CateDetails";
 import Blogs from "../Pages/Home/Blogs/Blogs";
 import AddToy from "../Pages/Home/AddToy/AddToy";
+import AllToys from "../Pages/Home/AllToys/AllToys";
 
 const router = createBrowserRouter([
   {
@@ -32,11 +33,18 @@ const router = createBrowserRouter([
       {
         path: "/addToy",
         element: <AddToy></AddToy>,
+        
+      },
+      {
+        path: "/allToys",
+        element: <AllToys></AllToys>,
+        loader : () => fetch("http://localhost:5000/kidsTruck")
+        
       },
       {
         path: "/categryData/:id",
         element: <CateDetails></CateDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/categryData/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/kidsTruck/${params.id}`)
       },
     ],
   },

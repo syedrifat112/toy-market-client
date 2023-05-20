@@ -65,6 +65,9 @@ const Navbar = () => {
               <li>
                 <Link to="/addToy">Add Toy</Link>
               </li>
+              <li>
+                <Link to="/allToys">All Toy</Link>
+              </li>
             </ul>
           </div>
 

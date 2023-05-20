@@ -10,6 +10,7 @@ const Card = ({toyData}) => {
     <div className="card-body items-center text-center">
       <h2 className="card-title">{name}</h2>
       <p>Rating : {rating}</p>
+      <p>Rating : {price}</p>
       <div className="card-actions">
         <Link to = {`/categryData/${_id}`}> <button className="btn btn-primary">View Details</button></Link>
       </div>
