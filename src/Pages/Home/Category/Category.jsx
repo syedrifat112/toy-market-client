@@ -9,7 +9,7 @@ const Category = () => {
   const [dumper, setDumper] = useState([]);
   const [marcedes, setMarcedes] = useState([]);
   useEffect(() => {
-    fetch("data.json")
+    fetch("http://localhost:5000/kidsTruck")
       .then((response) => response.json())
       .then((data) => setData(data));
   }, []);

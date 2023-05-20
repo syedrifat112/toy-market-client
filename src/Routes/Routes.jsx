@@ -6,6 +6,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import Error from "../Pages/Home/Error/Error";
 import CateDetails from "../Pages/Home/Category/CateDetails";
 import Blogs from "../Pages/Home/Blogs/Blogs";
+import AddToy from "../Pages/Home/AddToy/AddToy";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs></Blogs>,
+      },
+      {
+        path: "/addToy",
+        element: <AddToy></AddToy>,
       },
       {
         path: "/categryData/:id",

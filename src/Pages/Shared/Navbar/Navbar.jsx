@@ -62,27 +62,11 @@ const Navbar = () => {
               <li>
                 <Link to="/sign-up">SignUp</Link>
               </li>
+              <li>
+                <Link to="/addToy">Add Toy</Link>
+              </li>
             </ul>
           </div>
-
-          {/* <div className="navbar-end">
-              <>
-              <div className="avatar p-4">
-                <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-4">
-                  <img  />
-                </div>
-                
-              </div>
-              <button onClick={handleSignOut} className="btn btn-primary">
-                  SignOut
-                </button>
-              </>
-              <Link to={"/login"} className="btn btn-primary">
-                LogIn
-              </Link>
-  
-            
-          </div> */}
 
 
           <div className="navbar-end">
