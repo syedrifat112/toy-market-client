@@ -8,11 +8,11 @@ const AddToy = () => {
   const handlePostData = (event) => {
     event.preventDefault();
     const form = event.target;
-    const url = form.url.value;
+    const picture = form.url.value;
     const name = form.name.value;
-    const sellerName = user.displayName;
-    const sellerEmail = user.email;
-    const category = form.category.value;
+    const sellerName = form.sellerName.value;
+    const sellerEmail = form.sellerEmail.value;
+    const category_name = form.category_name.value;
     const price = form.price.value;
     const rating = form.rating.value;
     const quantity = form.quantity.value;
@@ -21,12 +21,12 @@ const AddToy = () => {
       name,
       sellerEmail,
       sellerName,
-      category,
+      category_name,
       price,
       rating,
       quantity,
       des,
-      url,
+      picture,
     };
     fetch("http://localhost:5000/kidsTruck", {
       method: "POST",
@@ -66,13 +66,26 @@ const AddToy = () => {
               />
             </div>
             <div>
-              <select name="category" className="select select-bordered w-full  mt-2 px-3 py-2">
+              <label className="font-medium">Seller Name</label>
+              <input
+                type="text"
+                name="sellerName"
+                defaultValue={user?.displayName} 
+                required
+                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+              />
+            </div>
+            <div>
+              <select
+                name="category_name"
+                className="select select-bordered w-full  mt-2 px-3 py-2"
+              >
                 <option disabled selected>
                   Sub-Category
                 </option>
-                <option  value = "Dumper">Dumper</option>
-                <option  value = "Monster Truck">Monster Truck</option>
-                <option  value = "Marcedes Actors">Marcedes Actors</option>
+                <option value="Dumper">Dumper</option>
+                <option value="Monster Truck">Monster Truck</option>
+                <option value="Marcedes Actors">Marcedes Actors</option>
               </select>
             </div>
           </div>
@@ -100,6 +113,16 @@ const AddToy = () => {
               <input
                 type="number"
                 name="quantity"
+                required
+                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+              />
+            </div>
+            <div>
+              <label className="font-medium"> Seller Email</label>
+              <input
+                type="email"
+                name="sellerEmail"
+                defaultValue={user?.email}
                 required
                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
               />
