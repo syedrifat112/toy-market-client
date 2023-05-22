@@ -8,7 +8,6 @@ import CateDetails from "../Pages/Home/Category/CateDetails";
 import Blogs from "../Pages/Home/Blogs/Blogs";
 import AddToy from "../Pages/Home/AddToy/AddToy";
 import AllToys from "../Pages/Home/AllToys/AllToys";
-import PrivateRoutes from "./PrivateRoutes";
 import MyToys from "../Pages/MyToys/MyToys";
 
 const router = createBrowserRouter([
@@ -46,13 +45,13 @@ const router = createBrowserRouter([
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("http://localhost:5000/kidsTruck"),
+        loader: () => fetch("https://kids-truck-server.vercel.app/kidsTruck"),
       },
       {
         path: "/kidsTruck/:id",
         element: <CateDetails></CateDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/kidsTruck/${params.id}`),
+          fetch(`https://kids-truck-server.vercel.app/kidsTruck/${params.id}`),
       },
     ],
   },

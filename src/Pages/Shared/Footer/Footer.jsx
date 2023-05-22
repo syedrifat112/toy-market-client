@@ -109,12 +109,14 @@ const Footer = () => {
           <div className="grid  grid-cols-4">
             <div className="col-span-1">
             <div className="avatar  mx-auto mb-8 ">
-              <div className="w-24 rounded-full flex justify-center items-center ">
+              <div className="flex justify-center items-center">
+              <div className="w-24 rounded-full  ">
                 <img
                   src={
-                    "https://i.ibb.co/fdMdkL1/pexels-cottonbro-studio-4252146.jpg"
+                    "https://i.ibb.co/RTRtqBr/cleveland-auto-show-car-logo-png-25.png"
                   }
                 />
+              </div>
               </div>
             </div>
             </div>

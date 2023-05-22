@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { toast } from "react-hot-toast";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const AddToy = () => {
@@ -28,11 +27,20 @@ const AddToy = () => {
       des,
       picture,
     };
-    fetch("http://localhost:5000/kidsTruck", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(toyData),
-    })
+    // fetch("http://localhost:5000/toyTruck", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(toyData),
+
+    // })
+    console.log(toyData);
+    fetch('https://kids-truck-server.vercel.app/kidsTruck', {
+            method: 'POST', 
+            headers: {
+                'content-type': 'application/json'
+            }, 
+            body: JSON.stringify(toyData)
+        })
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
@@ -40,6 +48,7 @@ const AddToy = () => {
           form.reset();
         }
       });
+      
   };
 
   return (

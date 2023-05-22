@@ -9,7 +9,7 @@ const Category = () => {
   const [dumper, setDumper] = useState([]);
   const [marcedes, setMarcedes] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/kidsTruck")
+    fetch("https://kids-truck-server.vercel.app/kidsTruck")
       .then((response) => response.json())
       .then((data) => setData(data));
   }, []);

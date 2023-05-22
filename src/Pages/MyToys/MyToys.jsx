@@ -11,7 +11,7 @@ const MyToys = () => {
   const handleDelete = (paramsId) => {
     const proceed = confirm("Are You sure you want to delete");
     if (proceed) {
-      fetch(`http://localhost:5000/kidsTruck/${paramsId}`, {
+      fetch(`https://kids-truck-server.vercel.app/kidsTruck/${paramsId}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -28,7 +28,7 @@ const MyToys = () => {
   };
       //   handle confirm
       const handleConfirm = (paramsId) => {
-        fetch(`http://localhost:5000/kidsTruck/${paramsId}`, {
+        fetch(`https://kids-truck-server.vercel.app/kidsTruck/${paramsId}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -50,7 +50,7 @@ const MyToys = () => {
             })
     }
 
-  const url = `http://localhost:5000/kidsTruck`;
+  const url = `https://kids-truck-server.vercel.app/kidsTruck`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -74,7 +74,7 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody>
-            {myToy.map((tableData, i) => (
+            {myToy.map((tableData) => (
               <ToysTable
                 key={tableData._id}
                 tableData={tableData}
