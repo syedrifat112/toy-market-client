@@ -26,11 +26,11 @@ const SignUp = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    // if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
-    //   setError("password not valid need 8 char ");
-    //   form.reset()
-    //   return;
-    // }
+    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+      setError("password not valid need 8 char ");
+      form.reset()
+      return;
+    }
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
@@ -39,7 +39,7 @@ const SignUp = () => {
         updateUser(name,photo).then((result) => {
             // setLoader(true);
             if(result){
-                toast.success("Signup Successful")
+                toast.success("SignUp Successful")
             }
               
           });
